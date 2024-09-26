@@ -1,42 +1,51 @@
 interface Student {
-  firstName: string;
-  lastName: string;
-  age: number;
-  location: string;
+    firstName: string;
+    lastName: string;
+    age: number;
+    location: string;
 }
 
-const student1: Student = {
-  firstName: 'Jhon',
-  lastName: 'Doe',
-  age: 20,
-  location: 'New York',
+let student1: Student = {
+    firstName: "Elma",
+    lastName: 'Quinon',
+    age: 24,
+    location: "Puerto Rico"
 };
 
-const student2: Student = {
-  firstName: 'Jane',
-  lastName: 'Doe',
-  age: 22,
-  location: 'Los Angeles'
+let student2: Student = {
+    firstName: 'Sonic',
+    lastName: 'The Hedgehog',
+    age: 33,
+    location: 'Metropolis'
 };
 
-const studentList: Student[] = [student1, student2];
+let studentList: Student[] = [student1, student2]
 
 const table = document.createElement('table');
-const tbody  document.createElement('tbody');
 
-studentList.forEach((student) => {
-  const row = document.createElement('tr');
 
-  const firstNameCell = document.createElement('td');
-  firstNameCell.textContent = student.firstName;
-  row.appendChild(firstNameCell);
+const headerRow = document.createElement('tr');
+const headers = ['First Name', 'Location'];
+headers.forEach(headerText => {
+    const header = document.createElement('th');
+    header.textContent = headerText;
+    headerRow.appendChild(header);
+});
+table.appendChild(headerRow);
 
-  const locationCell = document.createElement('td');
-  locationCell.textContent = student.location;
-  row.appendChild(locationCell);
+studentList.forEach(student => {
+    const row = document.createElement('tr');
 
-  tbody.appendChild(row);
+    const fisrtNameCell = document.createElement('td');
+    fisrtNameCell.textContent = student.firstName;
+    row.appendChild(fisrtNameCell);
+
+    const locationCell = document.createElement('td');
+    locationCell.textContent = student.location;
+    row.appendChild(locationCell);
+
+    table.appendChild(row);
 });
 
-table.appendChild(tbody);
-document.body.appendChild(table);
+
+document.getElementById('table-container').appendChild(table);
