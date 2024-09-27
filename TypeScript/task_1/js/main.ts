@@ -12,17 +12,17 @@ interface Teacher {
  }
 
  const teacher3: Teacher = {
-	 firstName: 'Snake',
+	 firstName: 'David',
 	 fullTimeEmployee: false,
-	 lastName: 'Plissken',
+	 lastName: 'Viera',
 	 location: 'New York',
 	 contract: false,
  };
 
  const director1: Directors = {
-	 firstName: 'David',
-	 lastName: 'Hayter',
-	 location: 'Los Angeles',
+	 firstName: 'Ramon',
+	 lastName: 'Pantoja',
+	 location: 'San Juan',
 	 fullTimeEmployee: true,
 	 numberOfReports: 17,
  };
